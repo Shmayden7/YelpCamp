@@ -25,8 +25,13 @@ const campground_routes = require('./routes/campgrounds'),
       auth_routes       = require('./routes/index');
 //=============================
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true, 
-useUnifiedTopology: true,}).then(() => console.log('D.B. Connected!'));
+// CONNECTING THE DATABASE
+mongoose.connect("mongodb+srv://Shmayden7:1760Ayden.@cluster0-edxa9.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, 
+useUnifiedTopology: true, useCreateIndex: true}).then(() => {
+    console.log('D.B. Connected!');
+}).catch(err => {
+    console.log('ERROR:', err.message);
+});
 
 app.use(body_parser.urlencoded({extended: true}));
 // this will make you not have to type .ejs
