@@ -76,9 +76,6 @@ app.use(function(req,res,next){
     res.locals.current_user = req.user;
     next();
 });
-//=============================
-
-//=============================
 // PASSING VAR MESSAGE INTO EVERY ROUTE
 app.use(function(req,res,next){
     res.locals.error = req.flash('error');
