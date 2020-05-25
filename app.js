@@ -26,7 +26,7 @@ const campground_routes = require('./routes/campgrounds'),
 //=============================
 
 //=============================
-// CONNECTING THE DATABASE
+// CONNECTING TO THE DATABASE
 //local route: mongodb://localhost:27017/yelp_camp
 mongoose.connect("mongodb+srv://Shmayden7:1760Ayden.@cluster0-edxa9.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, 
 useUnifiedTopology: true, useCreateIndex: true}).then(() => {
@@ -86,6 +86,6 @@ app.use(comment_routes);
 app.use(auth_routes);
 //=============================
 
-app.listen(1000, () => {
-    console.log("Yelp Camp has started! port 1000")
+app.listen(process.env.PORT, process.env.IP, () => {
+    console.log("Yelp Camp has started! port" + String(process.env.PORT));
 });
