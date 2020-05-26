@@ -92,5 +92,5 @@ app.use(auth_routes);
 //=============================
 
 app.listen(process.env.PORT, process.env.IP, () => {
-    console.log("Yelp Camp has started! port" + String(process.env.PORT));
+    console.log("Yelp Camp has started! port: " + String(process.env.PORT));
 });
